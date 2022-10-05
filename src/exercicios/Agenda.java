@@ -47,7 +47,7 @@ public class Agenda {
 	}
 
 	public void setDateEnd(SimpleDateFormat d) {
-		this.dateEnd = d;
+		this.dateEnd =d;
 	}
 
 	void imprimeAgenda() {

@@ -1,38 +1,45 @@
 package exercicios;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.time.zone.ZoneOffsetTransitionRule.TimeDefinition;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.TimeZone;
 
 public class TestaAgenda extends Agenda {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args, byte nextByte) {
 		Scanner leitor = new Scanner(System.in);
 		Agenda agenda = new Agenda();
 		Programador programador = new Programador();
 		Jogador jogador = new Jogador();
 
+
 		System.out.println("digite o nome do evento");
 		agenda.setEvent(leitor.nextLine());
 
 	    System.out.println("digite uma data de inicio");
-		agenda.setDateBegin(leitor.nextDouble());
+		agenda.setDateBegin(leitor.equals(leitor.nextDouble());
 
 	    System.out.println("digite uma data de término");
 		agenda.setDateEnd(leitor.nextDouble());
-
-		String confirmacao = "sim";
+        // receber de uma função
+		adicionaPessoa = "sim";
 
 		while (confirmacao.equals("sim")) {
 
-		
+		    //passar como função
 			System.out.println("você gostaria de adicionar alguém neste evento ?");
 			System.out.println("Sim ou Nao");
 			
 			confirmacao = leitor.next().toLowerCase();
 
 		switch (confirmacao.toLowerCase()) {
+			//Passar para funções
 			case "sim":
+			agenda.adicionaPessoa();
 				System.out.println("Essa pessoa é um Programador ou um Jogador ??");
 				String resposta = leitor.next();
 				if(resposta.toLowerCase().equals("programador") ){
@@ -59,25 +66,7 @@ public class TestaAgenda extends Agenda {
                  }
 				 else if(resposta.toLowerCase().equals("jogador")) {
 
-						
-						System.out.println("Digite o nome da pessoa");
-						jogador.setNome(leitor.next());
-	
-						System.out.println("Digite a idade da pessoa");
-						jogador.setIdade(leitor.nextInt());
-	
-						System.out.println("Digite a altura da pessoa");
-						jogador.setAltura(leitor.nextDouble());
-	
-						System.out.println("Digite a Chuteria da pessoa");
-						jogador.setChuteira(leitor.next());
-	
-						System.out.println("digite o meião da pessoa");
-						jogador.setMeiao(leitor.next());
-
-						System.out.println("Digite a bola da pessoa");
-						jogador.setBola(leitor.next());} 
-
+						agenda.adicionaPessoa;
 						
 				break;
 	
@@ -88,20 +77,13 @@ public class TestaAgenda extends Agenda {
 				System.out.println(agenda.getDateBegin()); 
 				System.out.println(agenda.getDateEnd());
 
-				if(programador.equals(true)){
+				
 					System.out.println(programador.getNome() + " " + programador.getIdade() + " " + programador.getAltura() + " " 
 					+ programador.getComputador() + " " + programador.getHeadset() + " " + programador.getTeclado());
-				} else if (jogador.equals(true)) {
+				 
 					System.out.println(jogador.getNome() + " " + jogador.getIdade() + " " + jogador.getAltura() + " " + jogador.getChuteira() + " " + 
 					jogador.getMeiao() + " " + jogador.getBola());
-				} else if(programador.equals(true) && jogador.equals(true)){
-					System.out.println(programador.getNome() + " " + programador.getIdade() + " " + programador.getAltura() + " " 
-					+ programador.getComputador() + " " + programador.getHeadset() + " " + programador.getTeclado());
-
-					System.out.println(jogador.getNome() + " " + jogador.getIdade() + " " + jogador.getAltura() + " " + jogador.getChuteira() + " " + 
-					jogador.getMeiao() + " " + jogador.getBola());
-				}
-
+				
 				break;
 			}
 		}
