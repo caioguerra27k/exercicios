@@ -9,10 +9,10 @@ import java.util.ListIterator;
 
 public class Agenda {
 
-	protected String event;
-	protected SimpleDateFormat dateBegin;
-	protected SimpleDateFormat dateEnd;
-	protected List<Pessoa> pessoas;
+	private String event;
+	private Date dateBegin;
+	private Date dateEnd;
+	private List<Pessoa> pessoas;
 
 	public List<Pessoa> getPessoas() {
 		return this.pessoas;
@@ -34,42 +34,43 @@ public class Agenda {
 		this.event = event;
 	}
 
-	public SimpleDateFormat getDateBegin() {
+	public Date getDateBegin() {
 		return dateBegin;
 	}
 
-	public void setDateBegin(SimpleDateFormat d) {
+	public void setDateBegin(Date d) {
 		this.dateBegin = d;
 	}
 
-	public SimpleDateFormat getDateEnd() {
+	public Date getDateEnd() {
 		return dateEnd;
 	}
 
-	public void setDateEnd(SimpleDateFormat d) {
-		this.dateEnd =d;
+	public void setDateEnd(Date dateEnd) {
+		this.dateEnd = dateEnd;
 	}
 
 	void imprimeAgenda() {
 		List<Pessoa> listaPessoas = new ArrayList<Pessoa>();
 		listaPessoas = this.getPessoas();
-		for (Pessoa pessoaAtual : listaPessoas);			
+		for (Pessoa pessoaAtual : listaPessoas) {
+				System.out.println(pessoaAtual.getNome() + " " + pessoaAtual.getIdade() + " " + pessoaAtual.getAltura());
 			}
+		}
 
-	void adicionaPessoa(String nome, int idade, double altura) {
+	public void adicionaPessoa(Pessoa pessoa) {
+		// não preciso do if, nem da linha 67 pois faço tudo isso na 63 (ternário)
 		List<Pessoa> novaLista = (this.pessoas == null)? new ArrayList<Pessoa>():this.pessoas;
 		if (this.pessoas == null) {
 			this.pessoas = new ArrayList<Pessoa>();
 		}
-		//novaLista = this.pessoas;
-		Pessoa novaPessoa = new Pessoa();
-		novaPessoa.setNome(nome);
-		novaPessoa.setIdade(idade);
-		novaPessoa.setAltura(altura);
-		novaLista.add(novaPessoa);
+		novaLista = this.pessoas;
+		novaLista.add(pessoa);
 		setPessoas(novaLista);
+		
 	}
-
+	
+	
 	void removePessoa(String nome) {
 		List<Pessoa> novaLista = (this.pessoas == null)? new ArrayList<Pessoa>():this.pessoas;
 		for (Pessoa pessoaAtual : novaLista) {
@@ -101,4 +102,6 @@ public class Agenda {
 	public String toString() {
 		return "Agenda [pessoas=" + pessoas + ", getPessoas()=" + getPessoas() + "]";
 	}
+
+
 }

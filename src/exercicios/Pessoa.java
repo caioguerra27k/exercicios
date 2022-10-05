@@ -9,14 +9,15 @@ public class Pessoa {
 	protected int mes;
 	protected int ano;
 	protected Integer idade;
-	protected double altura;
-
+	
 	public Integer getIdade() {
 		return idade;
 	}
 	public void setIdade(Integer idade) {
 		this.idade = idade;
 	}
+
+	protected double altura;
 
 	public String getNome() {
 		return nome;
@@ -50,7 +51,6 @@ public class Pessoa {
 		this.ano = ano;
 	}
 
-	@Override
 	public String toString() {
 		return "nome: " + this.nome + " dia: " + this.dia + ", mes:" + this.mes +
 				", ano " + this.ano +"altura:" + this.altura + ",idade: " + idade;

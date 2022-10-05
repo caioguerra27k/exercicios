@@ -24,6 +24,7 @@ public class Jogador extends Pessoa {
 	public void setBola(String bola) {
 		this.bola = bola;
 	}
+	@Override
 	public String toString() {
 		return "nome: " + this.nome + " dia: " + this.dia + ", mes:" + this.mes +
 				", ano " + this.ano +"altura:" + this.altura + ",idade: " + idade +

@@ -27,8 +27,6 @@ public class Programador extends Pessoa {
 	
 	@Override
 	public String toString() {
-		return "nome: " + this.nome + " dia: " + this.dia + ", mes:" + this.mes +
-				", ano " + this.ano +"altura:" + this.altura + ",idade: " + idade +
-				 "programador [computador=" + computador + ", headset=" + headset + ", teclado=" + teclado + "]";
+		return "programador [computador=" + computador + ", headset=" + headset + ", teclado=" + teclado + "]";
    }
 }
