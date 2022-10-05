@@ -1,6 +1,6 @@
 package exercicios;
 
-public class exibeDados {
+public class ExibeDados {
 	public static void main(String[] args) {
 
 		Pessoa Caio = new Pessoa();
