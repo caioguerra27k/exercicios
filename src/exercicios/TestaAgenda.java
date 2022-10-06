@@ -13,25 +13,26 @@ public class TestaAgenda extends Agenda {
 	public static void main(String[] args) throws ParseException {
 		Scanner leitor = new Scanner(System.in);
 		Agenda agenda = new Agenda();
-		SimpleDateFormat sdf = new SimpleDateFormat("dd,MM,yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("EEEEEEE, d, MMMMMM 'de' yyyy");
+		SimpleDateFormat sdf2 = new SimpleDateFormat("dd,MM,yyyy");
 
 		System.out.println("digite o nome do evento");
 		agenda.setEvent(leitor.nextLine());
 
 		System.out.println("digite uma data de inicio");
-		agenda.setDateBegin(sdf.parse(leitor.nextLine()));
+		agenda.setDateBegin(sdf2.parse(leitor.nextLine()));
 
 		System.out.println("digite uma data de término");
-		agenda.setDateEnd(sdf.parse(leitor.nextLine()));
+		agenda.setDateEnd(sdf2.parse(leitor.nextLine()));
 
 		String datainicio = sdf.format(agenda.getDateBegin());
 		String datafim = sdf.format(agenda.getDateEnd());
 
-		boolean confirmacao = queroadicionarPessoa(leitor);;
+		boolean confirmacao = queroadicionarPessoa(leitor);
 
 		while (confirmacao) {
 			System.out.println("essa pessoa é um Jogador ou um Programador ?");
-			String resposta = leitor.next();
+		String resposta = leitor.next();
 
 			if (resposta.equals("programador")) {
 				agenda.adicionaPessoa(prepareProgramador(leitor));
@@ -42,8 +43,8 @@ public class TestaAgenda extends Agenda {
 		}
 
 		System.out.println(agenda.getEvent());
-		System.out.println(agenda.getDateBegin());
-		agenda.getDateEnd();
+		System.out.println("Data de inicio: " + datainicio);
+		System.out.println("Data de final:" + datafim);
 		agenda.imprimeAgenda();
 	}
 

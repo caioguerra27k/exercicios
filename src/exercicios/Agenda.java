@@ -35,22 +35,22 @@ public class Agenda {
 	}
 
 	public Date getDateBegin() {
-		return dateBegin;
-	}
+        return dateBegin;
+    }
 
-	public void setDateBegin(Date d) {
-		this.dateBegin = d;
-	}
+    public void setDateBegin(Date dateBegin) {
+        this.dateBegin = dateBegin;
+    }
 
-	public Date getDateEnd() {
-		return dateEnd;
-	}
+    public Date getDateEnd() {
+        return dateEnd;
+    }
 
-	public void setDateEnd(Date dateEnd) {
-		this.dateEnd = dateEnd;
-	}
+    public void setDateEnd(Date dateEnd) {
+        this.dateEnd = dateEnd;
+    }
 
-	void imprimeAgenda() {
+    void imprimeAgenda() {
 		List<Pessoa> listaPessoas = new ArrayList<Pessoa>();
 		listaPessoas = this.getPessoas();
 		for (Pessoa pessoaAtual : listaPessoas) {
@@ -102,6 +102,8 @@ public class Agenda {
 	public String toString() {
 		return "Agenda [pessoas=" + pessoas + ", getPessoas()=" + getPessoas() + "]";
 	}
+
+
 
 
 }
